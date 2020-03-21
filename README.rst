@@ -2,7 +2,7 @@ DeepSpeech-ELAN v0.0.1
 ======================
 
 This project is very experimental and entirely based to Christopher Cox's
-`Persephone ELAN <https://github.com/coxchristopher/persephone-elan/>`_ , 
+`Persephone-ELAN <https://github.com/coxchristopher/persephone-elan/>`_ , 
 even to the degree that in this early version the Persephone specific scripts 
 have not been adapted to DeepSpeech. That project is used as a template also
 in the current version of README file.
@@ -77,7 +77,7 @@ At the moment (0.0.1) this doesn't work.
 Acknowledgements
 ----------------
 
-Thanks to `Christopher Cox <https://github.com/coxchristopher>_` for his work with Persephone-ELAN. Acknowledgements of that project are included here as well.
+Thanks to `Christopher Cox <https://github.com/coxchristopher>`_ for his work with Persephone-ELAN. Acknowledgements of that project are included here as well.
 
 Thanks are due to all of the contributors to Persephone, including `Oliver Adams
 <https://oadams.github.io/>`_ and `Alexis Michaud <https://lacito.vjf.cnrs.fr/membres/michaud.htm>`_,
