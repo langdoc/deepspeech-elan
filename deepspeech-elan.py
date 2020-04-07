@@ -228,7 +228,7 @@ with open(params['output_tier'], 'w', encoding = 'utf-8') as output_tier:
     # Write document header.
 
     output_tier.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-    output_tier.write('<TIER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:avatech-tier.xsd" columns="PersephoneOutput">\n')
+    output_tier.write('<TIER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:avatech-tier.xsd" columns="DeepSpeechOutput">\n')
 
     # Write out annotations and recognized text (e.g., '<span start="17.492"
     # end="18.492"><v>OUTPUT</v></span>').  If we've been asked to, convert
