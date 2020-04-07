@@ -20,7 +20,7 @@
             The "info" element contains the name as it will be shown in the user interface. Try to define a name
             that makes it likely to be unique, e.g by including an institution or university acronym.
             -->
-            <recognizer recognizerType="local" runLinux="./deepspeech-elan.sh" runMac="./persephone-elan.sh" runWin=""
+            <recognizer recognizerType="local" runLinux="./deepspeech-elan.sh" runMac="./deepspeech-elan.sh" runWin=""
                 info="DeepSpeech-ELAN">DeepSpeech</recognizer>
 
             <!-- For a more detailed documentation, a HTML file linked to the recognizer. This HTML ships with the 
@@ -47,15 +47,22 @@
                 mimetypes="text/plain"
                 info="Input tier to process">input_tier</input>
 
-    		<input level="basic" type="auxiliary" optional="false" 
-                info="DeepSpeech model">/Users/someone/somewhere/model/output_graph.pbmm</input>
+            <input level="basic" type="auxiliary" optional="false" 
+                info="DeepSpeech temporary corpus directory">corpus_dir</input>
 
     		<input level="basic" type="auxiliary" optional="false" 
-                info="Language model">/Users/someone/somewhere/model/language.lm</input>
+                info="DeepSpeech model">/Users/npartane/github/DeepSpeech-test/deepspeech-0.6.1-models/output_graph.pbmm</input>
 
+<!--    		<input level="basic" type="auxiliary" optional="false" 
+                info="Language model">/Users/someone/somewhere/model/language.lm</input>-->
+
+<!--            <output level="basic" type="tier" optional="false"
+                mimetypes="text/xml"
+                info="Output recognized text">/Users/npartane/github/DeepSpeech-test/test.xml</output>-->
             <output level="basic" type="tier" optional="false"
                 mimetypes="text/xml"
                 info="Output recognized text">output_tier</output>
+
         </RECOGNIZER>
     </Components>
 </CMD>
