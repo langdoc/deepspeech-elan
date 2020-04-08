@@ -102,15 +102,13 @@ print("PROGRESS: 0.3 Creating temporary clips", flush = True)
 
 #prefix_to_annotation = {}
 
-untranscribed_dir = os.path.join(params['corpus_dir'], 'wav')
+# untranscribed_dir = os.path.join(params['corpus_dir'], 'wav')
 
 for annotation in annotations:
 
     # Save the audio clip in a named temporary file in the corpus 'feat/
     # untranscribed' directory. 
-    annotation['clip'] = tempfile.NamedTemporaryFile(suffix = '.wav', \
-        dir = untranscribed_dir)
-    f.write(f"{annotation}")
+    annotation['clip'] = tempfile.NamedTemporaryFile(suffix = '.wav')
     clip = converted_audio[annotation['start']:annotation['end']]
     clip.export(annotation['clip'], format = 'wav')
 
@@ -122,7 +120,7 @@ print("PROGRESS: 0.7 Starting STT with DeepSpeech", flush = True)
 temp_dir = tempfile.TemporaryDirectory()
 
 # Model path has to be taken from ELAN
-ds = Model("/Users/npartane/github/DeepSpeech-test/deepspeech-0.6.1-models/output_graph.pbmm", 500)
+ds = Model(params['model'], 500)
 
 f.write("\n\nloaded DeepSpeech model\n\n")
 

@@ -47,18 +47,12 @@
                 mimetypes="text/plain"
                 info="Input tier to process">input_tier</input>
 
-            <input level="basic" type="auxiliary" optional="false" 
-                info="DeepSpeech temporary corpus directory">corpus_dir</input>
-
     		<input level="basic" type="auxiliary" optional="false" 
-                info="DeepSpeech model">/Users/npartane/github/DeepSpeech-test/deepspeech-0.6.1-models/output_graph.pbmm</input>
-
+                info="DeepSpeech model">model</input>
+            <!-- Language model could be specified here -->
 <!--    		<input level="basic" type="auxiliary" optional="false" 
-                info="Language model">/Users/someone/somewhere/model/language.lm</input>-->
+                info="Language model">language_model</input>-->
 
-<!--            <output level="basic" type="tier" optional="false"
-                mimetypes="text/xml"
-                info="Output recognized text">/Users/npartane/github/DeepSpeech-test/test.xml</output>-->
             <output level="basic" type="tier" optional="false"
                 mimetypes="text/xml"
                 info="Output recognized text">output_tier</output>
