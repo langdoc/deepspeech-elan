@@ -9,6 +9,10 @@
 import os
 import os.path
 
+# This is a system Niko Partanen used to get some information about
+# how the process advances. This should be set into some local file
+# if testing, although in bit more finished version this will be
+# removed or some other convention will be invented
 logfile = "/Users/npartane/github/DeepSpeech-test/log.txt"
 
 if os.path.exists(logfile):
@@ -28,7 +32,6 @@ import unicodedata
 from deepspeech import Model
 import numpy as np
 import wave
-from pathlib import Path
 
 import pydub
 
@@ -50,7 +53,7 @@ ffmpeg = shutil.which('ffmpeg')
 if not ffmpeg:
     sys.exit(-1)
 
-f.write("ffmpeg ok (skipped testing)\n")
+f.write("ffmpeg found\n")
 
 # Read in all of the parameters that ELAN passes to this local recognizer on
 # standard input.
@@ -59,7 +62,7 @@ for line in sys.stdin:
     if match:
         params[match.group(1)] = match.group(2).strip()
 
-f.write('passed parameter check\n')
+f.write('found parameters, saving them to file too for inspection\n')
 
 for i in params:
 
@@ -96,7 +99,7 @@ subprocess.call([ffmpeg, '-y', '-v', '0', \
 converted_audio = pydub.AudioSegment.from_file(converted_audio_file, \
     format = 'wav')
 
-f.write("Converted audio\n")
+f.write("Converted audio.\n")
 
 print("PROGRESS: 0.3 Creating temporary clips", flush = True)
 
@@ -106,15 +109,15 @@ print("PROGRESS: 0.3 Creating temporary clips", flush = True)
 
 for annotation in annotations:
 
-    # Save the audio clip in a named temporary file in the corpus 'feat/
-    # untranscribed' directory. 
+    # It seems we don't need to save the files anywhere else when using DeepSpeech
+    # Saving them into specific folder structure was a Persephone's convention
     annotation['clip'] = tempfile.NamedTemporaryFile(suffix = '.wav')
     clip = converted_audio[annotation['start']:annotation['end']]
     clip.export(annotation['clip'], format = 'wav')
 
 converted_audio_file.close()
 
-f.write(f'\n\nGot to this part…\n')
+f.write(f'\nAudio cut succesfully.\n')
 
 print("PROGRESS: 0.7 Starting STT with DeepSpeech", flush = True)
 temp_dir = tempfile.TemporaryDirectory()
@@ -122,7 +125,7 @@ temp_dir = tempfile.TemporaryDirectory()
 # Model path has to be taken from ELAN
 ds = Model(params['model'], 500)
 
-f.write("\n\nloaded DeepSpeech model\n\n")
+f.write("\n\nLoaded DeepSpeech model.\n\n")
 
 for annotation in annotations:
 
@@ -138,7 +141,7 @@ for annotation in annotations:
 # below).
 print("PROGRESS: 0.95 Preparing output tier", flush = True)
 
-f.write(f"\n\nStarting to save tiers\n")
+f.write(f"\n\nStarting to save tiers.\n\n")
 
 with open(params['output_tier'], 'w', encoding = 'utf-8') as output_tier:
     # Write document header.
