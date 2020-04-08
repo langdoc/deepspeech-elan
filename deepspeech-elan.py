@@ -130,9 +130,7 @@ f.write("\n\nLoaded DeepSpeech model.\n\n")
 for annotation in annotations:
 
     fin = wave.open(annotation['clip'].name, 'rb')
-    f.write("\n\nread temp file\n\n")
     audio = np.frombuffer(fin.readframes(fin.getnframes()), np.int16)
-    f.write("\n\ntrying to save the result\n\n")
     annotation['value'] = (ds.stt(audio))
 
 
