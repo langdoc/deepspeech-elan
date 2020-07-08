@@ -4,13 +4,14 @@ DeepSpeech-ELAN v0.1.0
 This project is very experimental and entirely based to Christopher Cox's
 `Persephone-ELAN <https://github.com/coxchristopher/persephone-elan/>`_ .
 Project layout and design follows entirely Cox's implementation, besides 
-the part where ASR tool is used. That project is used as a template also
+the part where a different ASR tool is used. That project is used as a template also
 in the current version of README file.
 
-The project connects to DeepSpeech experiments done and published in 2020 by 
+This work connects to DeepSpeech experiments done and published in 2020 by 
 Nils Hjortnaes, Timofey Arkhangelskiy, Niko Partanen, Michael Rießler and Francis Tyers.
 
-Code related to DeepSpeech in this project has been written by Niko Partanen.
+Code related to DeepSpeech in this project has been written by Niko Partanen within 
+Kone Foundation funded research project `Language Documentation meets Language Technology: The Next Step in the Description of Komi <https://langdoc.github.io/IKDP-2/>`_.
 
 Concept
 -------
