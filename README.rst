@@ -27,14 +27,19 @@ Then we can select DeepSpeech-ELAN from the Recognizers-panel:
 
 We need to point into correct DeepSpeech model (.pb or .pbmm formats), 
 optionally to a language model file that tries to fix the output, and
-to a temporary location where an intermediate XML file is saved. Exact 
+to a temporary location where an intermediate XML file is saved. More exact installation 
 instructions are below.
 
 When we run the DeepSpeech, new tier will be generated with the predicted
 content. If we run the model again (i.e. without the language model), a 
 number will be appended to the name.
 
-.. image:: screenshots/layout.png
+.. image:: screenshots/result.png
+
+Normally we would run this into a file that has no transcription at all, 
+but this example also illustrates the current different in prediction and 
+correctly transcribed text. We are, however, currently improving our results. 
+For more information see the publications listed below.
 
 English DeepSpeech models can be downloaded from `DeepSpeech website <https://github.com/mozilla/DeepSpeech/releases/tag/v0.7.4>`_ . This would be one easy way to test our extension.
 
