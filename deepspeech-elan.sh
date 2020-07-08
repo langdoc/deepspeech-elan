@@ -15,8 +15,8 @@
 # ** Edit the following two lines to point to the Python 3 executable and the
 # ** directory in which 'ffmpeg' is found on this computer.
 # **
-export PYTHON3="/Users/npartane/tmp/deepspeech-venv/bin/python"
-export FFMPEG_DIR="/opt/local/bin"
+export PYTHON3="/Users/niko/anaconda3/bin/python"
+export FFMPEG_DIR="/usr/local/bin"
 
 export LC_ALL="en_US.UTF-8"
 export PYTHONIOENCODING="utf-8"

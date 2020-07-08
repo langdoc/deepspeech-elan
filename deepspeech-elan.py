@@ -13,7 +13,7 @@ import os.path
 # how the process advances. This should be set into some local file
 # if testing, although in bit more finished version this will be
 # removed or some other convention will be invented
-logfile = "/Users/npartane/github/DeepSpeech-test/log.txt"
+logfile = "/Users/niko/github/komi-deepspeech-model/log.txt"
 
 if os.path.exists(logfile):
     os.remove(logfile)
@@ -123,7 +123,11 @@ print("PROGRESS: 0.7 Starting STT with DeepSpeech", flush = True)
 temp_dir = tempfile.TemporaryDirectory()
 
 # Model path has to be taken from ELAN
-ds = Model(params['model'], 500)
+ds = Model(params['model'])
+
+if params['language_model']:
+
+    ds.enableExternalScorer(params['language_model'])
 
 f.write("\n\nLoaded DeepSpeech model.\n\n")
 

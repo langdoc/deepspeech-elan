@@ -49,9 +49,9 @@
 
     		<input level="basic" type="auxiliary" optional="false" 
                 info="DeepSpeech model">model</input>
-            <!-- Language model could be specified here -->
-<!--    		<input level="basic" type="auxiliary" optional="false" 
-                info="Language model">language_model</input>-->
+
+    		<input level="basic" type="auxiliary" optional="true" 
+                info="Language model">language_model</input>
 
             <output level="basic" type="tier" optional="false"
                 mimetypes="text/xml"
