@@ -123,6 +123,7 @@ If referring to this code in a publication, please consider refering to the foll
     author = {Niko Partanen},
     year = {2021}
     note = {Version 0.1.1},
+    doi = {10.5281/zenodo.4486474}
     }
 
 
