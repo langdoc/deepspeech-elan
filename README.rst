@@ -1,4 +1,4 @@
-DeepSpeech-ELAN v0.1.0
+DeepSpeech-ELAN v0.1.1
 ======================
 
 This project is very experimental and entirely based to Christopher Cox's
