@@ -121,8 +121,8 @@ If referring to this code in a publication, please consider refering to the foll
   @manual{partanen2020deepspeechelan,
     title = {DeepSpeech-ELAN},
     author = {Niko Partanen},
-    year = {2020}
-    note = {Version 0.1.0},
+    year = {2021}
+    note = {Version 0.1.1},
     }
 
 
